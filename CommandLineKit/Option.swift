@@ -46,7 +46,7 @@ public class Option {
 
   internal init(_ shortFlag: String?, _ longFlag: String?, _ required: Bool, _ helpMessage: String) {
     if let sf = shortFlag {
-      assert(sf.characters.count <= 3, "Short flag must be a single character")
+      assert(sf.count <= 3 && !sf.isEmpty, "Short flag must less than 3 chars")
       assert(Int(sf) == nil && sf.toDouble() == nil, "Short flag cannot be a numeric value")
     }
 
